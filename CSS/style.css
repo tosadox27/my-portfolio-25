@@ -1,0 +1,442 @@
+/* ==========================================
+   Variables y Configuración de Temas
+   ========================================== */
+:root {
+    --bg-color: #F8FAFC;
+    --text-color: #0F172A;
+    --accent-color: #0705DF;
+    --card-bg: #FFFFFF;
+    --card-border: #E2E8F0;
+    --bg-alt: #F1F5F9;
+    --text-muted: #475569;
+    --transition-speed: 0.3s ease;
+}
+
+[data-theme="dark"] {
+    --bg-color: #0F172A;
+    --text-color: #F8FAFC;
+    --accent-color: #38BDF8;
+    --card-bg: #1E293B;
+    --card-border: #334155;
+    --bg-alt: #090D16;
+    --text-muted: #94A3B8;
+}
+
+/* ==========================================
+   Estilos Generales y Reset
+   ========================================== */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    transition: background-color var(--transition-speed), color var(--transition-speed);
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+.text-center {
+    text-align: center;
+}
+
+/* ==========================================
+   Encabezado y Navegación
+   ========================================== */
+.site-header {
+    position: sticky;
+    top: 0;
+    background-color: var(--card-bg);
+    border-bottom: 1px solid var(--card-border);
+    z-index: 1000;
+    transition: background-color var(--transition-speed), border-color var(--transition-speed);
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 4rem;
+}
+
+.brand-logo {
+    font-weight: 700;
+    font-size: 1.15rem;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.brand-highlight {
+    color: var(--accent-color);
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: color 0.2s ease;
+}
+
+.nav-link:hover, .nav-link:focus {
+    color: var(--accent-color);
+}
+
+.theme-toggle-btn {
+    background: none;
+    border: 1px solid var(--card-border);
+    color: var(--text-color);
+    padding: 0.5rem 0.85rem;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    font-size: 0.85rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.theme-toggle-btn:hover {
+    background-color: var(--bg-alt);
+    border-color: var(--accent-color);
+}
+
+/* ==========================================
+   Sección Hero
+   ========================================== */
+.hero-section {
+    padding: 5rem 0 4rem;
+    text-align: center;
+}
+
+.hero-title {
+    font-size: clamp(2rem, 4vw, 3rem);
+    font-weight: 800;
+    margin-bottom: 1rem;
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+    color: var(--text-muted);
+    max-width: 700px;
+    margin: 0 auto 2rem;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* ==========================================
+   Botones y Elementos Interactivos
+   ========================================== */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.375rem;
+    font-weight: 600;
+    text-decoration: none;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: opacity 0.2s ease, transform 0.1s ease;
+    border: none;
+}
+
+.btn:active {
+    transform: translateY(1px);
+}
+
+.btn-primary {
+    background-color: var(--accent-color);
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    opacity: 0.9;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--text-color);
+    border: 1px solid var(--card-border);
+}
+
+.btn-secondary:hover {
+    background-color: var(--card-bg);
+    border-color: var(--accent-color);
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.btn-disabled {
+    background-color: var(--card-border);
+    color: var(--text-muted);
+    cursor: not-allowed;
+    width: 100%;
+}
+
+/* ==========================================
+   Secciones Generales
+   ========================================== */
+.section {
+    padding: 4rem 0;
+}
+
+.bg-alt {
+    background-color: var(--bg-alt);
+}
+
+.section-title {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    letter-spacing: -0.01em;
+}
+
+.content-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 0.75rem;
+    padding: 2.5rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    max-width: 850px;
+    margin: 0 auto;
+}
+
+.content-card p + p {
+    margin-top: 1.25rem;
+}
+
+/* ==========================================
+   Servicios (Grid Adaptativo)
+   ========================================== */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.service-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    padding: 1.75rem;
+    transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-color);
+}
+
+.service-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.service-desc {
+    color: var(--text-muted);
+    font-size: 0.925rem;
+}
+
+/* ==========================================
+   Eventos y Proyectos
+   ========================================== */
+.events-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.75rem;
+}
+
+.event-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 0.75rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.event-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+}
+
+.event-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.badge {
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 0.25rem 0.65rem;
+    border-radius: 1rem;
+    text-transform: uppercase;
+}
+
+.badge-active {
+    background-color: rgba(7, 5, 223, 0.1);
+    color: var(--accent-color);
+}
+
+.badge-planned {
+    background-color: var(--card-border);
+    color: var(--text-muted);
+}
+
+.event-edition {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+.event-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.event-date {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 0.75rem;
+}
+
+.event-desc {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    margin-bottom: 1.5rem;
+}
+
+.event-footer {
+    margin-top: auto;
+}
+
+/* ==========================================
+   Contacto
+   ========================================== */
+.contact-intro {
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    color: var(--text-muted);
+}
+
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.contact-card {
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 0.5rem;
+    padding: 1.25rem 2rem;
+    text-decoration: none;
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.4rem;
+    min-width: 200px;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.contact-card:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+.contact-icon {
+    font-size: 1.5rem;
+}
+
+.contact-label {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    font-weight: 500;
+}
+
+.contact-value {
+    font-size: 0.95rem;
+    font-weight: 600;
+}
+
+/* ==========================================
+   Pie de Página
+   ========================================== */
+.site-footer {
+    background-color: var(--card-bg);
+    border-top: 1px solid var(--card-border);
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.footer-credit {
+    font-size: 0.85rem;
+}
+
+/* ==========================================
+   Media Queries para Responsividad
+   ========================================== */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        height: auto;
+        padding: 1rem 0;
+        gap: 0.75rem;
+    }
+
+    .nav-list {
+        gap: 1rem;
+    }
+
+    .hero-section {
+        padding: 3rem 0 2rem;
+    }
+}
